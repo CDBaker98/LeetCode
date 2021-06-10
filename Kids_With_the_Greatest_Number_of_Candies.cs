@@ -1,13 +1,21 @@
-﻿public class Solution {
+﻿/*
+Given the array candies and the integer extraCandies, where candies[i] represents the number of candies that the ith kid has.
+For each kid, check if there is a way to distribute extraCandies among the kids such that he or she can have the greatest number of candies among them.
+Notice that multiple kids can have the greatest number of candies.
+*/
+
+public class Solution {
     public IList<bool> KidsWithCandies(int[] candies, int extraCandies) {
         IList<bool> res = new List<bool>();
         int currMax = candies.Max();
 
         foreach (int i in candies) {
-            if (i + extraCandies >= currMax)
+            if (i + extraCandies >= currMax) {
                 res.Add(true);
-            else
+            }
+            else {
                 res.Add(false);
+            }
         }
 
         return res;
